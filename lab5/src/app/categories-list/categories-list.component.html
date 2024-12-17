@@ -1,0 +1,27 @@
+<div class="container">
+    <h1>Categories List</h1>
+    <button (click)="goToAddCategory()">Add New Category</button>
+
+    <div *ngIf="isLoading">Loading categories...</div>
+
+    <table *ngIf="!isLoading && categories.length > 0" class="categories-table">
+        <thead>
+            <tr>
+                <th>Category Name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let category of categories">
+                <td>{{ category.name }}</td>
+                <td>
+                    <button (click)="deleteCategory(category.id)">Delete</button>
+                    <button (click)="goToEditCategory(category.id)">Edit</button>
+                    <button (click)="goToCategoryDetails(category.id)">Details</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div *ngIf="!isLoading && categories.length === 0">No categories found.</div>
+</div>

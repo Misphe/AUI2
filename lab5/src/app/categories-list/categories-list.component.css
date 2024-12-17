@@ -1,0 +1,33 @@
+.container {
+    margin: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.categories-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.categories-table th,
+.categories-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.categories-table th {
+    background-color: #f4f4f4;
+    text-align: left;
+}
+
+button {
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #c9302c;
+}
