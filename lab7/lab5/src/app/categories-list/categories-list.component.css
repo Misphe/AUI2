@@ -1,0 +1,31 @@
+.container {
+    margin: 20px;
+}
+
+.categories-table {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.categories-table th,
+.categories-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.categories-table th {
+    background-color: #f4f4f4;
+    text-align: left;
+}
+
+button {
+    background-color: #4637c9;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #908ba7;
+}

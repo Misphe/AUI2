@@ -1,0 +1,45 @@
+GET http://localhost:8080/api/artists
+
+GET http://localhost:8080/api/songs
+
+GET http://localhost:8080/api/songs/a1ed8a88-bd9d-4f86-944e-6f196347c1ca
+
+GET http://localhost:8080/api/artists/5b561600-54a2-4621-b724-d47500ac9e1a
+
+POST http://localhost:8080/api/songs/5b561600-54a2-4621-b724-d47500ac9e1a
+Content-Type: application/json
+
+{
+  "name": "Wygladasz idealnie",
+  "length": 180
+}
+
+POST http://localhost:8080/api/artists
+Content-Type: application/json
+
+{
+  "name": "Skolim",
+  "followers": 18018108
+}
+
+DELETE http://localhost:8080/api/songs/0f9082f6-8b2f-4523-9da4-542e89a9a7cb
+Content-Type: application/json
+
+DELETE http://localhost:8080/api/artists/ba59e68e-2d23-4c8e-9111-cde9bd154dc2
+Content-Type: application/json
+
+PUT http://localhost:8080/api/artists/efd19317-c1bc-4006-b0ba-2c28ebe5056e
+Content-Type: application/json
+
+{
+  "name": "Kizo",
+  "followers": 542524
+}
+
+PUT http://localhost:8080/api/songs/30f7729a-0ff2-41c2-9748-0de4fcd46054
+Content-Type: application/json
+
+{
+  "name": "Disney",
+  "length": 201
+}

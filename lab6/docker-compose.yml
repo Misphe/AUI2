@@ -1,0 +1,12 @@
+version: "3.8"
+
+services:
+  angular:
+    image: angular-image-ps3:latest
+    container_name: angular-app
+    ports:
+      - "8080:80"
+
+  java:
+    image: lab2:latest
+    container_name: java-app

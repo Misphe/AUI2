@@ -1,0 +1,48 @@
+version: '3.8'
+
+services:
+  discovery-server:
+    image: discovery:latest
+    container_name: discovery-server
+    ports:
+      - "8761:8761"
+    networks:
+      - app-network
+
+  spring-boot-app:
+    image: java-app:latest
+    container_name: spring-app
+    ports:
+      - "8081:8081"
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://discovery-server:8761/eureka/
+    depends_on:
+      - discovery-server
+    networks:
+      - app-network
+
+  spring-boot-app2:
+    image: java-app:latest
+    container_name: spring-app2
+    ports:
+      - "8082:8082"
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://discovery-server:8761/eureka/
+    depends_on:
+      - discovery-server
+    networks:
+      - app-network
+
+  angular-app:
+    image: angular-image-ps:latest
+    container_name: angular-app-service
+    ports:
+      - "8080:80"
+    depends_on:
+      - spring-boot-app
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
